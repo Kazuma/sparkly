@@ -1,0 +1,45 @@
+!!!
+%html
+  %head
+    %title Sparkly
+    %meta(charset="utf-8")
+    %meta(name="viewport" content="width-device-width; initial-scale=1;")
+    %link(rel="stylesheet" type="text/css" href="css/ivory.css")
+    %link(rel="stylesheet" type="text/css" href="css/bit.css")
+    %link(href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css")
+    %script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js")
+    %script(src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js")
+  %body
+    %header.text-center
+      %h1.text-center Sparkly
+      %p.text-center ~Star shooting information at Okinawa~
+
+    %hr
+
+    %div.grid
+      %h3.text-center Weather
+      %h4.text-center.space-bot
+        %small= "#{Time.now.strftime('%Y/%m/%d (%a)')}" 
+      %div.row.space-bot
+        %div.c6
+          %img(src="http://weather.asahi.com/gms/images/kakudai_B.jpg" alt="cloud")
+
+        - @stars.each do |text|
+          %div.c6.space-bot
+            %p.note.text-center="#{text}"
+
+        - @weather.each do |text|
+          %div.c6.space-bot
+            %p.note.text-center="#{text}"
+
+      %hr
+
+      %div.row.space-bot
+        %div.c12.space-bot
+          %h3.text-center.space-bot Star Event
+          %table
+            %tr
+              %th.text-center 日付
+              %th.text-center できごと
+            - @events.each do |event|
+              ="#{event}"
