@@ -36,6 +36,11 @@ class Sparkly
     list << html.xpath('//table[@class="yjw_table"]/tr/td[2]/table[2]/tr').first.text.strip.gsub(/^\s+/, '').each_line { |line| line }
   end
 
+  def weekly_weather
+    html = feed(@weather)
+    html.xpath('//div[@id="yjw_week"]/table[1]').inner_html
+  end
+
   def astro_event
     html = feed(@astro)
     html.xpath('//div[@id="sky-content"]/table[1]/tr')

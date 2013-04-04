@@ -13,6 +13,7 @@ get '/' do
 
   @stars = sparkly.star_expornet
   @weather = sparkly.weather
+  @weekly_weather = sparkly.weekly_weather
   @events = sparkly.astro_event
 
   haml :index
