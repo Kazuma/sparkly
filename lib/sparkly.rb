@@ -38,7 +38,7 @@ class Sparkly
 
   def astro_event
     html = feed(@astro)
-    html.xpath('//div[@id="sky-content"]/table/tr')
+    html.xpath('//div[@id="sky-content"]/table[1]/tr')
   end
 
   private
