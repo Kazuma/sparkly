@@ -11,6 +11,7 @@ class Sparkly
       :nago => "http://weather.yahoo.co.jp/weather/jp/expo/starry/47/9120.html"
     }
     @weather = "http://weather.yahoo.co.jp/weather/jp/47/9110.html"
+    @amedas = "http://weather.yahoo.co.jp/weather/raincloud/47/?c=g2"
     @astro = "http://www.nao.ac.jp/astro/sky/#{date.year}/#{date.strftime('%m')}.html"
   end
 
@@ -39,6 +40,11 @@ class Sparkly
   def weekly_weather
     html = feed(@weather)
     html.xpath('//div[@id="yjw_week"]/table[1]').inner_html
+  end
+
+  def amedas
+    html = feed(@amedas)
+    html.xpath('//div[@id="yjw_amedas"]/table/tr/td/img/@src')
   end
 
   def astro_event

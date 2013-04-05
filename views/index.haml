@@ -23,7 +23,10 @@
       %div.row.space-bot
         %div.c6
           %img(src="http://weather.asahi.com/gms/images/kakudai_B.jpg" alt="cloud")
+        %div.c6
+          %img(src="#{@amedas}")
 
+      %div.row.space-bot
         - @stars.each do |text|
           %div.c6.space-bot
             %p.note.text-center="#{text}"
