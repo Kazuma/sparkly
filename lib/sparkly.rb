@@ -18,7 +18,7 @@ class Sparkly
 
   def weekly_star_index
     html = feed(@star)
-    html.xpath('//div[@id="yjw_sissu_week"]/table[1]').inner_html
+    html.xpath('//div[@id="yjw_sissu_week"]/table[1]/tr[2]').inner_html
   end
 
   def weather
