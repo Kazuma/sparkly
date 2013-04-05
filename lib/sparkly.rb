@@ -6,27 +6,19 @@ require 'open-uri'
 class Sparkly
   def initialize
     date = Time.now
-    @starry = {
-      :naha => "http://weather.yahoo.co.jp/weather/jp/expo/starry/47/9110.html",
-      :nago => "http://weather.yahoo.co.jp/weather/jp/expo/starry/47/9120.html"
-    }
+    @star = "http://weather.yahoo.co.jp/weather/jp/expo/starry/47/9110.html"
     @weather = "http://weather.yahoo.co.jp/weather/jp/47/9110.html"
     @amedas = "http://weather.yahoo.co.jp/weather/raincloud/47/?c=g2"
     @astro = "http://www.nao.ac.jp/astro/sky/#{date.year}/#{date.strftime('%m')}.html"
   end
 
-  def star_expornet
-    list = []
+  def star_index
+    star_pase(feed(@star)).sub(/指数/, '　指数')
+  end
 
-    @starry.each do |key, url|
-      text = star_pase(feed(url)).sub(/指数/, '　指数')
-      if key == :naha
-        list << "那覇は#{text} です"
-      else
-        list << "名護は#{text} です"
-      end
-    end
-    list
+  def weekly_star_index
+    html = feed(@star)
+    html.xpath('//div[@id="yjw_sissu_week"]/table[1]').inner_html
   end
 
   def weather

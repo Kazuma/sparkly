@@ -11,7 +11,8 @@ set :haml, { :format => :html5 }
 get '/' do
   sparkly = Sparkly.new
 
-  @stars = sparkly.star_expornet
+  @star = sparkly.star_index
+  @weekly_star = sparkly.weekly_star_index
   @weather = sparkly.weather
   @weekly_weather = sparkly.weekly_weather
   @amedas = sparkly.amedas

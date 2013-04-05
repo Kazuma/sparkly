@@ -27,9 +27,8 @@
           %img(src="#{@amedas}")
 
       %div.row.space-bot
-        - @stars.each do |text|
-          %div.c6.space-bot
-            %p.note.text-center="#{text}"
+        %div.c6.space-bot
+          %p.note.text-center="#{@star}"
 
         - @weather.each do |text|
           %div.c6.space-bot
@@ -42,6 +41,14 @@
           %h3.text-center.space-bot Weekly weather forecast
           %table
             ="#{@weekly_weather}"
+
+      %hr
+
+      %div.row.space-bot
+        %div.c12.space-bot
+          %h3.text-center.space-bot Weekly star index
+          %table
+            ="#{@weekly_star}"
 
       %hr
 
