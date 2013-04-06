@@ -13,7 +13,15 @@ class Sparkly
   end
 
   def star_index
-    star_pase(feed(@star)).sub(/指数/, '　指数')
+    tree = 1
+    html = feed(@star)
+    star_parse(html, tree)
+  end
+
+  def tomorrow_star_index
+    tree = 3
+    html = feed(@star)
+    star_parse(html, tree)
   end
 
   def weekly_star_index
@@ -22,11 +30,15 @@ class Sparkly
   end
 
   def weather
-    list = []
+    tree = 1
     html = feed(@weather)
-    list << html.xpath('//table[@class="yjw_table"]/tr/td[1]/table/tr[2]/td').first.text.strip
-    list << html.xpath('//table[@class="yjw_table"]/tr/td[2]/table[1]/tr/td/small').first.text
-    list << html.xpath('//table[@class="yjw_table"]/tr/td[2]/table[2]/tr').first.text.strip.gsub(/^\s+/, '').each_line { |line| line }
+    weather_parse(html, tree)
+  end
+
+  def tomorrow_weather
+    tree = 2
+    html = feed(@weather)
+    weather_parse(html, tree)
   end
 
   def weekly_weather
@@ -49,7 +61,11 @@ class Sparkly
       Nokogiri::HTML(open(url))
     end
 
-    def star_pase(html)
-      html.xpath('//tr[3]/td').first.text.strip
+    def star_parse(html, tree)
+      html.xpath("//div[@id='yjw_sissu_todaytomorrow']/table[2]/tr/td[#{tree}]/table").inner_html
+    end
+
+    def weather_parse(html, tree)
+    html.xpath("//div[@id='yjw_area_todaytomorrow']/table[@class='yjw_table'][#{tree}]").inner_html
     end
 end

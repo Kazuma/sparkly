@@ -17,7 +17,7 @@
     %hr
 
     %div.grid
-      %h3.text-center Weather
+      %h3.text-center Weather Map
       %h4.text-center.space-bot
         %small= "#{Time.now.strftime('%Y/%m/%d (%a)')}" 
       %div.row.space-bot
@@ -26,19 +26,22 @@
         %div.c6
           %img(src="#{@amedas}")
 
-      %div.row.space-bot
-        %div.c6.space-bot
-          %p.note.text-center="#{@star}"
-
-        - @weather.each do |text|
-          %div.c6.space-bot
-            %p.note.text-center="#{text}"
-
       %hr
 
       %div.row.space-bot
+        %h3.text-center.space-bot Weekly weather forecast
+        %div.row
+          %div.c6
+            %table
+              ="#{@weather}"
+            %table
+              ="#{@tomorrow_weather}"
+          %div.c6
+            ="#{@star}"
+            ="#{@tomorrow_star}"
+
+      %div.row.space-bot
         %div.c12.space-bot
-          %h3.text-center.space-bot Weekly weather forecast
           %table
             ="#{@weekly_weather}"
             ="#{@weekly_star}"
