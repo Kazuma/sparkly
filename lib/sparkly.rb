@@ -17,7 +17,7 @@ class Sparkly
   end
 
   def tomorrow_star_index
-    tree = 3
+    tree = 2
     html = feed(@star)
     star_parse(html, tree)
   end
@@ -56,14 +56,14 @@ class Sparkly
 
   private
     def feed(url)
-      Nokogiri::HTML(open(url))
+      Nokogiri::HTML(open(url).read)
     end
 
     def star_parse(html, tree)
-      html.xpath("//div[@id='yjw_sissu_todaytomorrow']/table[2]/tr/td[#{tree}]/table").inner_html
+      html.xpath("//div[@id='contents-body']/div[@id='main']/div[@class='expoTbl']/table/tr[5]/td[#{tree}]").inner_html
     end
 
     def weather_parse(html, tree)
-    html.xpath("//div[@id='yjw_area_todaytomorrow']/table[@class='yjw_table'][#{tree}]").inner_html
+      html.xpath("//div[@id='contents-body']/div[@id='main']/div[@class='forecastCity']/table/tr/td[#{tree}]").inner_html
     end
 end
