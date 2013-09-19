@@ -24,7 +24,7 @@
         %div.c6
           %img(src="http://weather.asahi.com/gms/images/kakudai_B.jpg" alt="cloud")
         %div.c6
-          %img(src="#{@amedas}")
+          %img(src="#{@plugins[:amedas].index}")
 
       %hr
 
@@ -34,14 +34,14 @@
         %div.c12.space-bot
           %table
             %tr
-              %td= "#{@weather}#{@star}"
-              %td= "#{@tomorrow_weather}#{@tomorrow_star}"
+              %td= "#{@plugins[:weather].today}#{@plugins[:star].today}"
+              %td= "#{@plugins[:weather].tomorrow}#{@plugins[:star].tomorrow}"
 
       %div.row.space-bot
         %div.c12.space-bot
           %table
-            ="#{@weekly_weather}"
-            ="#{@weekly_star}"
+            ="#{@plugins[:weather].weekly}"
+            ="#{@plugins[:star].weekly}"
 
       %hr
 
@@ -52,5 +52,5 @@
             %tr
               %th.text-center 日付
               %th.text-center できごと
-            - @events.each do |event|
+            - @plugins[:astro].events.each do |event|
               ="#{event}"
