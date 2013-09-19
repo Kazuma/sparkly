@@ -30,15 +30,12 @@
 
       %div.row.space-bot
         %h3.text-center.space-bot Weekly weather forecast
-        %div.row
-          %div.c6
-            %table
-              ="#{@weather}"
-            %table
-              ="#{@tomorrow_weather}"
-          %div.c6
-            ="#{@star}"
-            ="#{@tomorrow_star}"
+      %div.row.space-bot
+        %div.c12.space-bot
+          %table
+            %tr
+              %td= "#{@weather}#{@star}"
+              %td= "#{@tomorrow_weather}#{@tomorrow_star}"
 
       %div.row.space-bot
         %div.c12.space-bot
