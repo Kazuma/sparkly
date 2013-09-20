@@ -7,11 +7,11 @@ require 'sparkly/version'
 Gem::Specification.new do |spec|
   spec.name          = "sparkly"
   spec.version       = Sparkly::VERSION
-  spec.authors       = ["TODO: Autor name"]
-  spec.email         = ["TODO: Email address"]
+  spec.authors       = ["Kazuma Muramatsu"]
+  spec.email         = ["muramatu.k@gmail.com"]
   spec.description   = %q{Okinawa Star Infomation}
   spec.summary       = %q{Okinawa Star Infomation}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/Kazuma/sparkly"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
