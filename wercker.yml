@@ -1,0 +1,7 @@
+box: wercker/ruby
+build:
+  steps:
+    - bundle-install
+    - script:
+        name: run sparkly
+        code: bundle exec sparkly
