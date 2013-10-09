@@ -1,24 +1,25 @@
 require 'spec_helper'
+require 'sparkly/option'
 
 module Sparkly
 
   describe Option do
 
-    subject {
-      Sparkly::Option
-    }
+    before do
+      @sparkly = Sparkly::Option.new(['-p', '1234', '-b', '4567'])
+    end
 
-    context 'parse option' do
+    describe 'parse option' do
       it 'initialize' do
-        expect(subject.new(['-p', '1234', '-b', '5678'])).to be_kind_of(Sparkly::Option)
+        @sparkly.must_be_kind_of(Sparkly::Option)
       end
 
       it 'port' do
-        expect(subject.new(['-p', '1234', '-b', '4567'])[:port]).to eq("1234")
+        @sparkly[:port].must_equal("1234")
       end
 
       it 'bind' do
-        expect(subject.new(['-p', '1234', '-b', '4567'])[:bind]).to eq("4567")
+        @sparkly[:bind].must_equal("4567")
       end
     end
 

@@ -1,29 +1,30 @@
 require 'spec_helper'
+require 'sparkly/plugin'
 
 module Sparkly
   describe Plugin do
 
-    subject {
-       Sparkly::Plugin.new("./spec/test_data/foo_bar.rb")
-    }
+    before do
+       @sparkly = Sparkly::Plugin.new("./spec/test_data/foo_bar.rb")
+    end
 
-    context 'initialize' do
+    describe 'initialize' do
       it 'instance' do
-        expect(subject).to be_kind_of(Sparkly::Plugin)
+        @sparkly.must_be_kind_of(Sparkly::Plugin)
       end
     end
 
-    context 'file' do
+    describe 'file' do
       it 'parse name' do
-        expect(subject.name).to eq("foo_bar")
+        @sparkly.name.must_equal("foo_bar")
       end
 
       it 'exists file' do
-        expect(subject.file?).to be_true
+        @sparkly.file?.must_equal(true)
       end
 
       it 'instance' do
-        expect(subject.instance).to be_kind_of(FooBar)
+        @sparkly.instance.must_be_kind_of(FooBar)
       end
     end
 
