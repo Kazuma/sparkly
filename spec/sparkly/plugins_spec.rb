@@ -1,19 +1,20 @@
 require 'spec_helper'
+require 'sparkly/plugins'
 
 module Sparkly
   describe Plugins do
 
-    subject {
-      Sparkly::Plugins.new("./spec/test_data/")
-    }
+    before do
+      @sparkly = Sparkly::Plugins.new("./spec/test_data/")
+    end
 
-    context 'initialize' do
+    describe 'initialize' do
       it 'instance' do
-        expect(subject).to be_kind_of(Hash)
+        @sparkly.must_be_kind_of(Hash)
       end
 
       it 'instalnce name' do
-        expect(subject[:foo_bar]).to be_kind_of(FooBar)
+        @sparkly[:foo_bar].must_be_kind_of(FooBar)
       end
     end
 
