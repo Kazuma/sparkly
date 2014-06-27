@@ -1,19 +1,19 @@
 class Star < Sparkly::Base
 
   def initialize
-    @url = "http://weather.yahoo.co.jp/weather/jp/expo/starry/47/9110.html"
+    @url = "http://www.tenki.jp/indexes/starry_sky/10/50/9110.html"
   end
 
   def today
-    inner_html("//div[@id='contents-body']/div[@id='main']/div[@class='expoTbl']/table/tr[5]/td[1]")
+    inner_html("//div[@id='bd-main']/div[@class='contentsBox'][1]/div[@id='exponentLarge']/dl[@id='exponentLargeLeft']/dd")
   end
 
   def tomorrow
-    inner_html("//div[@id='contents-body']/div[@id='main']/div[@class='expoTbl']/table/tr[5]/td[2]")
+    inner_html("//div[@id='bd-main']/div[@class='contentsBox'][1]/div[@id='exponentLarge']/dl[@id='exponentLargeRight']/dd")
   end
 
   def weekly
-    inner_html('//div[@id="yjw_sissu_week"]/table[1]/tr[2]')
+    inner_html("//div[@id='bd-main']/div[@class='contentsBox'][2]/table[@id='cityWeeklyWeatherV2']/tbody/tr[2]")
   end
 
 end
