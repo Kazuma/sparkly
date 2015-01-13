@@ -5,7 +5,7 @@ class Astro < Sparkly::Base
   end
 
   def events
-    feed('//div[@id="sky-content"]/table[1]/tr')
+    feed('//article/table/tr')
   end
 
 end
