@@ -5,7 +5,7 @@ class Astro < Sparkly::Base
   end
 
   def events
-    feed('//article/table/tr')
+    feed('//table[@class="table--default table--dotted-line table--striped"]/tr')
   end
 
 end
