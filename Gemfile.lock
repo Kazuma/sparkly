@@ -11,7 +11,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.7)
+    addressable (2.3.8)
     coveralls (0.7.12)
       multi_json (~> 1.10)
       rest-client (>= 1.6.8, < 2)
@@ -66,7 +66,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.6)
-    webmock (1.20.4)
+    webmock (1.21.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
 
