@@ -27,6 +27,7 @@ GEM
     eventmachine (1.0.8)
     haml (4.0.7)
       tilt
+    hashdiff (0.2.2)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     json (1.8.3)
@@ -66,9 +67,10 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
-    webmock (1.21.0)
+    webmock (1.22.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
+      hashdiff
 
 PLATFORMS
   ruby
