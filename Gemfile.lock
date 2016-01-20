@@ -25,7 +25,7 @@ GEM
     docile (1.1.5)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
-    eventmachine (1.0.8)
+    eventmachine (1.0.9.1)
     haml (4.0.7)
       tilt
     hashdiff (0.2.3)
