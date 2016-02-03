@@ -23,7 +23,7 @@ GEM
       safe_yaml (~> 1.0.0)
     daemons (1.2.3)
     docile (1.1.5)
-    domain_name (0.5.25)
+    domain_name (0.5.20160128)
       unf (>= 0.0.5, < 1.0.0)
     eventmachine (1.0.9.1)
     haml (4.0.7)
