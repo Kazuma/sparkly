@@ -28,7 +28,7 @@ GEM
     eventmachine (1.0.9.1)
     haml (4.0.7)
       tilt
-    hashdiff (0.2.3)
+    hashdiff (0.3.0)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     json (1.8.3)
