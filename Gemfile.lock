@@ -26,7 +26,7 @@ GEM
     haml (4.0.7)
       tilt
     hashdiff (0.3.0)
-    json (2.0.1)
+    json (2.0.2)
     mini_portile2 (2.1.0)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
