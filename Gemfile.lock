@@ -32,7 +32,7 @@ GEM
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     public_suffix (2.0.4)
-    rack (1.6.4)
+    rack (1.6.5)
     rack-protection (1.5.3)
       rack
     rake (11.3.0)
