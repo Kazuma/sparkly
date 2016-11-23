@@ -23,7 +23,7 @@ GEM
       safe_yaml (~> 1.0.0)
     daemons (1.2.4)
     docile (1.1.5)
-    eventmachine (1.2.0.1)
+    eventmachine (1.2.1)
     haml (4.0.7)
       tilt
     hashdiff (0.3.0)
