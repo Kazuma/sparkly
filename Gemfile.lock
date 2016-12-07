@@ -35,7 +35,7 @@ GEM
     rack (1.6.5)
     rack-protection (1.5.3)
       rack
-    rake (11.3.0)
+    rake (12.0.0)
     rinne (0.0.3)
     safe_yaml (1.0.4)
     simplecov (0.12.0)
@@ -56,7 +56,7 @@ GEM
     thor (0.19.4)
     tilt (2.0.5)
     tins (1.13.0)
-    webmock (2.1.0)
+    webmock (2.3.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
