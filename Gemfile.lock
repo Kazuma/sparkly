@@ -26,10 +26,10 @@ GEM
     eventmachine (1.2.1)
     haml (4.0.7)
       tilt
-    hashdiff (0.3.1)
+    hashdiff (0.3.2)
     json (2.0.2)
     mini_portile2 (2.1.0)
-    nokogiri (1.6.8.1)
+    nokogiri (1.7.0)
       mini_portile2 (~> 2.1.0)
     public_suffix (2.0.4)
     rack (1.6.5)
